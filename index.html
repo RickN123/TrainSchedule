@@ -34,33 +34,39 @@
                     <div class="card-header bg-success text-white">
                         <p>Current Train Schedule</p>
                     </div>
+                    <table class="table text-left">
+                        <thead>
+                            <tr>
+                                <th scope="col"> Train Name</th>
+                                <th scope="col">Destination</th>
+                                <th scope="col">Frequency (min)</th>
+                                <th scope="col">Next Arrival</th>
+                                <th scope="col">Minutes Away</th>
+                            </tr>
+                        </thead>
+                        <br>
+                        <br>
+                        <tbody>
+                            <div id="Trains">
+                                <tr>
+                                    <td>R5 Local</td>
+                                    <td>Paoli</td>
+                                    <td>15</td>
+                                    <td>30 minutes</td>
+                                    <td>50</td>
+
+                                </tr>
+                                <tr>
+                                    <td>R7 Local </td>
+                                    <td>Landsdowne</td>
+                                    <td>25</td>
+                                    <td>40 minutes</td>
+                                    <td>35 </td>
+                                </tr>
+                            </div>
+                        </tbody>
                 </div>
             </div>
-
-            <table class="table text-left">
-                <thead>
-                    <tr>
-                        <th scope="col"> Train Name</th>
-                        <th scope="col">Destination</th>
-                        <th scope="col">Frequency (min)</th>
-                        <th scope="col">Next Arrival</th>
-                        <th scope="col">Minutes Away</th>
-                    </tr>
-                </thead>
-                <br>
-                <br>
-                <tbody>
-                    <div id="Trains">
-                        <tr>
-                            <td>R5 Local</td>
-                            <td>Paoli</td>
-                            <td>15</td>
-                            <td>30 minutes</td>
-                            <td>50</td>
-
-                        </tr>
-                    </div>
-                </tbody>
             </table>
 
             <div class="row">
@@ -84,6 +90,7 @@
                             </div>
                             <div class="Frequency">
                                 <label for="Frequency">Frequency</label>
+                                <input type="text" class="form-control" id="frequency-input">
                             </div>
                         </form>
 
