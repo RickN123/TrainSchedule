@@ -17,10 +17,23 @@ $(document.readyState(function () {
         event.preventDefault();
         console.log(this):
 
+        var trainName = $("name-input").val();
+        var trainDestination = $("destination-input").val();
+        var trainFirstTime = $("first-train-input").val();
+        var trainFrequency = $("frequency-input").val();
+
+
         var newTrain = {
-
-
+            name: trainName,
+            destination: trainDestination,
+            firsttrain: trainFirstTime,
+            arrival: trainFrequency,
+            dateAdded: firebase.database.ServerValue.TIMESTAMP
         }
+
+
+
+    }
     }
   }
 
