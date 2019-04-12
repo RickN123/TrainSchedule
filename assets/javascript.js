@@ -10,17 +10,18 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-$(document.readyState(function () {
+$(document).ready(function () {
 
-    $("submit").on("click", function (event) {
+    $("#submit").click(function (event) {
 
         event.preventDefault();
-        console.log(this):
 
-        var trainName = $("name-input").val();
-        var trainDestination = $("destination-input").val();
-        var trainFirstTime = $("first-train-input").val();
-        var trainFrequency = $("frequency-input").val();
+        var trainName = $("#name-input").val();
+        var trainDestination = $("#destination-input").val();
+        var trainFirstTime = $("#first-train-input").val();
+        var trainFrequency = $("#frequency-input").val();
+
+
 
 
         var addTrain = {
@@ -33,10 +34,10 @@ $(document.readyState(function () {
 
         database.ref().push(addTrain);
 
-        $("name-input").val.empty();
-        $("destination-input").val.empty();
-        $("first-train-input").val.empty();
-        $("frequency-input").val.empty();
+        $("#name-input").empty();
+        $("#destination-input").empty();
+        $("#first-train-input").empty();
+        $("#frequency-input").empty();
     })
 
     database.ref().on("child_added", function (childSnapshot) {
@@ -46,13 +47,13 @@ $(document.readyState(function () {
 
         var newTrain = sv.name;
         var newDestination = sv.destination;
-        var newTrainFirstTime = sv.TrainFirstTime;
+        var newTrainFirstTime = sv.firsttrain;
         var newTrainFrequency = sv.arrival;
 
-        var newTime = sv.time;
+        var newTime = sv.arrival;
 
         var inputTime = parseInt(moment(newTime, "00:00").format("LT"));
-        var inputFrequency = parseInt(moment(newFrequency, "00").format("LT"));
+        var inputFrequency = parseInt(moment(newTrainFrequency, "00").format("LT"));
 
         var currentTime = parseInt(moment().format('00:00'));
         var currentFrequency = parseInt(moment().format("00"));
@@ -66,7 +67,8 @@ $(document.readyState(function () {
         newRow.append("<td>" + newTime + "</td>");
         newRow.append("<td>" + newTrainFrequency + "</td>");
 
-        $("tbody".append(newRow);
+        $("#tbody").append(newRow);
+
 
     })
 })
