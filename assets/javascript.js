@@ -31,9 +31,19 @@ $(document.readyState(function () {
             dateAdded: firebase.database.ServerValue.TIMESTAMP
         }
 
+        database.ref().push(newTrain);
+
+        $("name-input").val.empty();
+        $("destination-input").val.empty();
+        $("first-train-input").val.empty();
+        $("frequency-input").val.empty();
+    })
 
 
-    }
+
+
+
+}
     }
   }
 
