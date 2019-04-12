@@ -60,13 +60,14 @@ $(document.readyState(function () {
         var currentTime = (inputTime + inputFrequency)
 
         var newRow = $("<tr>");
+        newRow.append("<td>" + newTrain + "</td>");
+        newRow.append("<td>" + newDestination + "</td>");
+        newRow.append("<td>" + newTrainFirstTime + "</td>");
+        newRow.append("<td>" + newTime + "</td>");
+        newRow.append("<td>" + newTrainFrequency + "</td>");
 
-
-
-
-
-
-
+        $("tbody".append(newRow);
 
     })
+})
 
