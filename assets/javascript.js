@@ -51,6 +51,19 @@ $(document.readyState(function () {
 
         var newTime = sv.time;
 
+        var inputTime = parseInt(moment(newTime, "00:00").format("LT"));
+        var inputFrequency = parseInt(moment(newFrequency, "00").format("LT"));
+
+        var currentTime = parseInt(moment().format('00:00'));
+        var currentFrequency = parseInt(moment().format("00"));
+
+        var currentTime = (inputTime + inputFrequency)
+
+        var newRow = $("<tr>");
+
+
+
+
 
 
 
