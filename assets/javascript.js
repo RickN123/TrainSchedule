@@ -23,7 +23,7 @@ $(document.readyState(function () {
         var trainFrequency = $("frequency-input").val();
 
 
-        var newTrain = {
+        var addTrain = {
             name: trainName,
             destination: trainDestination,
             firsttrain: trainFirstTime,
@@ -31,7 +31,7 @@ $(document.readyState(function () {
             dateAdded: firebase.database.ServerValue.TIMESTAMP
         }
 
-        database.ref().push(newTrain);
+        database.ref().push(addTrain);
 
         $("name-input").val.empty();
         $("destination-input").val.empty();
@@ -39,12 +39,21 @@ $(document.readyState(function () {
         $("frequency-input").val.empty();
     })
 
+    database.ref().on("child_added", function (childSnapshot) {
+        console.log(childSnapshot.val());
+
+        var sv = childSnapshot.val();
+
+        var newTrain = sv.name;
+        var newDestination = sv.destination;
+        var newTrainFirstTime = sv.TrainFirstTime;
+        var newTrainFrequency = sv.arrival;
+
+        var newTime = sv.time;
 
 
 
 
 
-}
-    }
-  }
+    })
 
